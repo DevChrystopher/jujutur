@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Roteiro da Felicidade - Feliz Aniversário</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CSS: Estilização Visual --- */
+        :root {
+            --primary-color: #6b97ff; /* Cor de destaque (vermelho suave) */
+            --bg-color: #f7f9fc;
+            --card-bg: #ffffff;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        /* Cabeçalho */
+        header {
+            background: linear-gradient(135deg, #1d4076 0%, #5b729a 100%);
+            text-align: center;
+            padding: 60px 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: #fff;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Timeline Container */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        /* Linha vertical central */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 2px;
+        }
+
+        /* Container de cada parada (Card) */
+        .container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            box-sizing: border-box;
+            opacity: 0; /* Invisível inicialmente para animação */
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Lados Esquerdo e Direito */
+        .left { left: 0; }
+        .right { left: 50%; }
+
+        .right::after { left: -16px; }
+
+        /* Estilo do Conteúdo (Foto + Texto) */
+        .content {
+            padding: 20px;
+            background-color: var(--card-bg);
+            position: relative;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .content h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+
+        .content img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .content img:hover {
+            transform: scale(1.02);
+        }
+
+        .date-badge {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background-color: #333;
+            color: white;
+        }
+
+        /* Responsividade para Celular */
+        @media screen and (max-width: 600px) {
+            .timeline::after { left: 31px; }
+            .container { width: 100%; padding-left: 70px; padding-right: 25px; }
+            .container::after { left: 15px; }
+            .left::after, .right::after { left: 15px; }
+            .right { left: 0%; }
+            header h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Parabéns, Vinícius!</h1>
+        <p>Prepare as malas: vamos curtir juntos esse momento mais que especial.</p>
+    </header>
+
+    <main class="timeline">
+        
+        <div class="container left">
+            <div class="content">
+                
+                <h2>Vamos começar?</h2>
+                <img src="foto1.jpg" alt="Frente da Casa">
+                <p>Um bom dia começa com uma bela refeição!</p>
+            </div>
+        </div>
+
+        <div class="container right">
+            <div class="content">
+                <h2>Conforto ao seu lado</h2>
+                <img src="foto2.jpg" alt="Sala de Estar">
+                <p>Claro que não poderia faltar nosso cantinho de descanso e de amor.</p>
+            </div>
+        </div>
+
+        <div class="container left">
+            <div class="content">
+                <h2>Cuidados em dia</h2>
+                <img src="foto3.jpg" alt="Cozinha">
+                <p>Cada pedaço com um belo detalhe.</p>
+            </div>
+        </div>
+
+        <div class="container right">
+            <div class="content">
+                <h2>Céu aberto</h2>
+                <img src="foto4.jpg" alt="Jardim">
+                <p>E porque não aproveirar um pouco do céu ao luar?</p>
+            </div>
+        </div>
+
+        <div class="container left">
+            <div class="content">
+                <h2>Nosso Refúgio</h2>
+                <img src="foto5.jpg" alt="Quarto">
+                <p>O melhor lugar do mundo é onde quer que a gente esteja juntos. Feliz aniversário!</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Feito com ❤️ para comemorar seu dia.</p>
+    </footer>
+
+    <script>
+        /* --- JS: Animação ao Rolar (Scroll) --- */
+        
+        // Seleciona todos os containers da timeline
+        const containers = document.querySelectorAll('.container');
+
+        // Cria um observador para ver quando o elemento aparece na tela
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                // Se o elemento estiver visível na tela
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible'); // Adiciona a classe que faz aparecer
+                }
+            });
+        }, {
+            threshold: 0.2 // Dispara quando 20% do elemento estiver visível
+        });
+
+        // Aplica o observador em cada container
+        containers.forEach(container => {
+            observer.observe(container);
+        });
+    </script>
+</body>
+</html>
