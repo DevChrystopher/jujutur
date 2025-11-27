@@ -205,6 +205,11 @@
         <p>Feito com ❤️ para comemorar seu dia.</p>
     </footer>
 
+    <audio id="musica-fundo" loop>
+        <source src="musica.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
     <script>
         /* --- JS: Animação ao Rolar (Scroll) --- */
         
@@ -227,6 +232,26 @@
         containers.forEach(container => {
             observer.observe(container);
         });
+
+        /* --- Script para tocar a música no primeiro clique --- */
+        document.body.addEventListener('click', function() {
+            var audio = document.getElementById("musica-fundo");
+            // Tenta tocar apenas se estiver pausado
+            if (audio.paused) {
+                audio.play();
+                audio.volume = 0.5; // Volume em 50% para não ficar muito alto
+            }
+        });
+        
+        // Tenta tocar também se a pessoa rolar a página (scroll)
+        window.addEventListener('scroll', function() {
+            var audio = document.getElementById("musica-fundo");
+            if (audio.paused) {
+                audio.play();
+                audio.volume = 0.5;
+            }
+        }, { once: true }); // O '{ once: true }' garante que esse comando só rode uma vez
+    </script>
     </script>
 </body>
 </html>
